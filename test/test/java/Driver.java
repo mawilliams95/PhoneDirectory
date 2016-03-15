@@ -10,13 +10,14 @@ public class Driver extends PhoneDirectory{
 	
 	public static void main(String[] s){
 		//Create a Phone Directory
-		PhoneDirectory directory1 = new PhoneDirectory();	
+		PhoneDirectory directory1 = new PhoneDirectory("/src");	
 		System.out.println("Phone Directory:\n");
 		
 		int userSelection = 0;
 		Scanner in = new Scanner(System.in);
 		String name, number;
 		
+		//User Prompt
 		do{ //prompt user to add entry
 			System.out.println("Enter 1 to add an entry to the Phone Directory and press enter.");
 			//prompt user to delete entry
@@ -75,7 +76,8 @@ public class Driver extends PhoneDirectory{
 		   }
 		   }while(userSelection != 0);	   
 		   
-		   in.close();
+			directory1.write();
+		    in.close();
 
 	}
 }
